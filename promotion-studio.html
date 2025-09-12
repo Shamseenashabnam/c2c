@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CERO - Create a Social Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade-in { animation: fadeIn 1.2s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+    .selected { background: #2563eb; color: #fff; }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-white via-blue-50 to-white text-gray-900">
+  <nav class="w-full bg-white shadow-sm py-4 fade-in">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <a href="index.html" class="text-2xl font-bold text-blue-700">CERO</a>
+      <div class="space-x-6">
+        <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium">Home</a>
+        <a href="services.html" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
+        <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium">About</a>
+      </div>
+    </div>
+  </nav>
+  <main class="container mx-auto px-4 py-12 fade-in">
+    <h1 class="text-3xl font-bold text-blue-800 mb-6 text-center">CERO - Create a Social Post</h1>
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="bg-white rounded-xl shadow-lg p-6 border border-blue-100 flex-1 flex flex-col items-center justify-center">
+        <select id="productName" class="w-full mb-3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <option value="">Select Product or Service</option>
+          <option value="Product">Product</option>
+          <option value="Service">Service</option>
+          <option value="Other">Other</option>
+        </select>
+        <textarea id="productAbout" class="w-full mb-3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="About it (describe your product or service)"></textarea>
+        <input id="promotionGoal" class="w-full mb-3 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Promotion Goal (e.g. increase sales, brand awareness)" />
+        <button id="generateBtn" class="w-full bg-blue-700 text-white py-3 rounded-lg font-semibold hover:bg-blue-800 transition text-xl">Generate Post</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    // --- AI Integration (replace with your backend endpoint) ---
+    async function callAI(productName, productAbout, promotionGoal) {
+      // Call your backend AI endpoint with product/service info and goal
+      const res = await fetch('http://localhost:3001/generate-plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ businessName: productName, businessType: productAbout, location: '', tier: '', goal: promotionGoal })
+      });
+      if (!res.ok) throw new Error('AI backend error');
+      return await res.json();
+    }
+
+    document.getElementById('generateBtn').onclick = async function() {
+      const productName = document.getElementById('productName').value;
+      const productAbout = document.getElementById('productAbout').value;
+      const promotionGoal = document.getElementById('promotionGoal').value;
+      if (!productName || !productAbout || !promotionGoal) {
+        alert('Please fill all fields before generating.');
+        return;
+      }
+      // Show loading
+      const btn = document.getElementById('generateBtn');
+      btn.disabled = true;
+      btn.textContent = 'Generating...';
+      try {
+        const content = await callAI(productName, productAbout, promotionGoal);
+        localStorage.setItem('promotionResult', JSON.stringify({ productName, productAbout, content }));
+        window.location.href = 'promotion-result.html';
+      } catch (err) {
+        alert('Failed to generate. Please check your backend and try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Generate Post';
+      }
+    };
+  </script>
+</body>
+</html>

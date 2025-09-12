@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CERO — Digital Marketing for Small Business</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .fade-in { animation: fadeIn 1.2s ease; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-white via-blue-50 to-white min-h-screen text-gray-900">
+    <!-- Navbar -->
+    <nav class="w-full bg-white shadow-sm py-4 fade-in">
+      <div class="container mx-auto flex justify-between items-center px-4">
+        <a href="index.html" class="text-2xl font-bold text-blue-700">CERO</a>
+        <div class="space-x-6">
+          <a href="index.html" class="text-gray-700 hover:text-blue-700 font-medium">Home</a>
+          <a href="services.html" class="text-gray-700 hover:text-blue-700 font-medium">Services</a>
+          <a href="about.html" class="text-gray-700 hover:text-blue-700 font-medium">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10 fade-in">
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-blue-800">Grow Your Business Online with CERO</h1>
+        <p class="text-lg text-gray-700 mb-6">AI-powered marketing, beautiful websites, and smart ads — all in one platform, designed for small businesses and startups.</p>
+        <a href="services.html" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-800 transition" id="get-started-btn">Get Started</a>
+      </div>
+      <div class="flex-1 flex justify-center">
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Marketing dashboard" class="rounded-xl shadow-lg w-full max-w-md">
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mx-auto px-4 py-12 fade-in">
+      <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">What CERO Does</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+          <svg class="mx-auto mb-4 w-12 h-12 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+          <h3 class="font-semibold text-xl mb-2">AI Website Builder</h3>
+          <p class="text-gray-600">Create a stunning, responsive website with one click. Auto-generated content and images for your business.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+          <svg class="mx-auto mb-4 w-12 h-12 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2" /><circle cx="12" cy="7" r="4" /></svg>
+          <h3 class="font-semibold text-xl mb-2">Content & Social</h3>
+          <p class="text-gray-600">AI writes posts, suggests hashtags, and schedules for best times to maximize your reach.</p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-6 text-center hover:shadow-lg transition">
+          <svg class="mx-auto mb-4 w-12 h-12 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2" /></svg>
+          <h3 class="font-semibold text-xl mb-2">Smart Ads</h3>
+          <p class="text-gray-600">Create local ads with optimized targeting and budget suggestions, powered by AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="container mx-auto px-4 py-12 fade-in">
+      <h2 class="text-3xl font-bold text-center mb-10 text-blue-800">Pricing</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl shadow p-8 text-center border-t-4 border-blue-200">
+          <h4 class="text-xl font-bold mb-2">Free</h4>
+          <p class="text-2xl font-extrabold mb-4">₹0/mo</p>
+          <ul class="text-gray-600 mb-6 space-y-2">
+            <li>Starter website</li>
+            <li>3 AI posts/month</li>
+            <li>Basic analytics</li>
+          </ul>
+          <a href="services.html" class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded font-semibold hover:bg-blue-200 transition">Start Free</a>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg p-8 text-center border-t-4 border-blue-500 scale-105 z-10">
+          <h4 class="text-xl font-bold mb-2">Starter</h4>
+          <p class="text-2xl font-extrabold mb-4">₹499/mo</p>
+          <ul class="text-gray-600 mb-6 space-y-2">
+            <li>Custom domain</li>
+            <li>Daily social posts</li>
+            <li>Ad campaign setup</li>
+          </ul>
+          <a href="services.html" class="inline-block bg-blue-700 text-white px-4 py-2 rounded font-semibold hover:bg-blue-800 transition">Get Starter</a>
+        </div>
+        <div class="bg-white rounded-xl shadow p-8 text-center border-t-4 border-blue-200">
+          <h4 class="text-xl font-bold mb-2">Pro</h4>
+          <p class="text-2xl font-extrabold mb-4">₹1499/mo</p>
+          <ul class="text-gray-600 mb-6 space-y-2">
+            <li>Managed campaigns</li>
+            <li>Priority support</li>
+            <li>Advanced analytics</li>
+          </ul>
+          <a href="services.html" class="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded font-semibold hover:bg-blue-200 transition">Go Pro</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t py-8 mt-8 fade-in">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <span class="font-bold text-blue-700 text-lg">CERO</span>
+          <span class="text-gray-500 ml-2">Helping small businesses grow with AI.</span>
+        </div>
+        <div class="space-x-6">
+          <a href="#" class="text-gray-600 hover:text-blue-700">Privacy</a>
+          <a href="#" class="text-gray-600 hover:text-blue-700">Terms</a>
+          <a href="about.html" class="text-gray-600 hover:text-blue-700">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Redirect to sign in page when Get Started is clicked
+      document.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('get-started-btn');
+        if (btn) {
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'signin.html';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
